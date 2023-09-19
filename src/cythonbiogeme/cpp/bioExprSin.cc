@@ -13,8 +13,6 @@
 #include <cmath>
 #include <sstream> 
 
-#define PI 3.14159265
-
 bioExprSin::bioExprSin(bioExpression* c) :
   child(c) {
 
@@ -37,8 +35,6 @@ const bioDerivatives* bioExprSin::getValueAndDerivatives(std::vector<bioUInt> li
 
   const bioDerivatives* childResult = child->getValueAndDerivatives(literalIds,gradient,hessian) ;
   bioReal cf = childResult->f ;
-  bioReal k = round(cf / (2 * PI)) ;
-  cf -= 2 * k * PI ;
   theDerivatives.f = sin(cf) ;
   bioReal d1 = cos(cf) ;
   bioReal d2 = -sin(cf) ;
