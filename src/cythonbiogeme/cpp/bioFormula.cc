@@ -38,6 +38,7 @@
 #include "bioExprPower.h"
 #include "bioExprUnaryMinus.h"
 #include "bioExprExp.h"
+#include "bioExprSin.h"
 #include "bioExprLog.h"
 #include "bioExprLogzero.h"
 #include "bioExprMultSum.h"
@@ -417,6 +418,13 @@ bioExpression* bioFormula::processFormula(bioString f) {
     expressions[id] = theExpression ;
     return theExpression ;
   }
+  else if (typeOfExpression == "sin") {
+    std::vector<bioString> items = split(f,',') ;
+    std::map<bioString,bioExpression*>::iterator e = expressions.find(items[1]) ;
+    theExpression = bioMemoryManagement::the()->get_bioExprSin(e->second) ;
+    expressions[id] = theExpression ;
+    return theExpression ;
+  }  
   else if (typeOfExpression == "Derive") {
     std::vector<bioString> items = split(f,',') ;
     std::map<bioString,bioExpression*>::iterator e = expressions.find(items[1]) ;

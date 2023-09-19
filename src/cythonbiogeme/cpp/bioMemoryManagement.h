@@ -41,6 +41,7 @@ class bioExprMontecarlo ;
 class bioExprNormalCdf ;
 class bioExprPanelTrajectory ;
 class bioExprExp ;
+class bioExprSin ;
 class bioExprLog ;
 class bioExprLogzero ;
 class bioExprDerive ;
@@ -94,6 +95,7 @@ public:
   bioExprNormalCdf* get_bioExprNormalCdf(bioExpression* ell) ;
   bioExprPanelTrajectory* get_bioExprPanelTrajectory(bioExpression* ell) ;
   bioExprExp* get_bioExprExp(bioExpression* ell) ;
+  bioExprSin* get_bioExprSin(bioExpression* ell) ;
   bioExprLog* get_bioExprLog(bioExpression* ell) ;
   bioExprLogzero* get_bioExprLogzero(bioExpression* ell) ;
   bioExprDerive* get_bioExprDerive(bioExpression* c, bioUInt lid) ;
@@ -135,6 +137,7 @@ private:
   std::vector<bioExprNormalCdf*> a_bioExprNormalCdf ;
   std::vector<bioExprPanelTrajectory*> a_bioExprPanelTrajectory ;
   std::vector<bioExprExp*> a_bioExprExp ;
+  std::vector<bioExprSin*> a_bioExprSin ;
   std::vector<bioExprLog*> a_bioExprLog ;
   std::vector<bioExprLogzero*> a_bioExprLogzero ;
   std::vector<bioExprDerive*> a_bioExprDerive ;
