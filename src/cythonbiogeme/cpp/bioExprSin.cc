@@ -41,7 +41,7 @@ const bioDerivatives* bioExprSin::getValueAndDerivatives(std::vector<bioUInt> li
 
   if (gradient) {
     for (bioUInt i = 0 ; i < n ; ++i) {
-      theDerivatives.g[i] = theDerivatives.d1 * childResult->g[i] ;
+      theDerivatives.g[i] = d1 * childResult->g[i] ;
       if (hessian) {
 	for (bioUInt j = 0 ; j < n ; ++j) {
 	  theDerivatives.h[i][j] =
